@@ -19,8 +19,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
+    - name: print dir
+      run: ls -a
+      
     - name: change dir
-      run: ls -a | cd BlazorTestApp\BlazorTestApp
+      run: cd BlazorTestApp/BlazorTestApp
 
     # Publishes the Blazor project to the release folder
     - name: Publish .NET Core Project
