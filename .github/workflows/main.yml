@@ -15,19 +15,19 @@ jobs:
 
     # Sets up .NET Core SDK 3.1
     - name: Setup .NET Core SDK
-    uses: actions/setup-dotnet@v1
-    with:
-      dotnet-version: 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
 
-    - name: change dir
-      run: cd BlazorTestApp
+    #- name: change dir
+    #  run: cd BlazorTestApp
     # Publishes the Blazor project to the release folder
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorTestApp.csproj -c Release -o release -nologo
+      run: cd BlazorTestApp | dotnet publish BlazorTestApp.csproj -c Release -o release -nologo
 
     # Changes the base tag in index.html from -/- to -BlazorTestApp- to match the GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to BlazorTestApp
-      run: sed -i -s/<base href=-\/- \/>/<base href=-\/BlazorTestApp\/- \/>/g- release/wwwroot/index.html
+      run: cd .. | sed -i -s/<base href=-\/- \/>/<base href=-\/BlazorTestApp\/- \/>/g- release/wwwroot/index.html
 
     # Copy index.html to 404.html to serve the same file when a file is not found
     - name: copy index.html to 404.html
