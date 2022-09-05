@@ -15,9 +15,9 @@ jobs:
 
     # Sets up .NET Core SDK 3.1
     - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1
+      uses: actions/setup-dotnet@v1.6.0
+      with:
+        dotnet-version: 3.1
 
     - name: change dir
       run: cd BlazorTestApp
@@ -41,6 +41,6 @@ jobs:
     - name: Commit wwwroot to GitHub pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      BRANCH: gh-pages
-      FOLDER: release/wwwroot
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: release/wwwroot
