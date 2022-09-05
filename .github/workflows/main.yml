@@ -9,13 +9,6 @@ jobs:
   deploy-to-github-pages:
     # Use Ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./BlazorTestApp
-
-    - name: print dir 1
-      run: ls -a
-
     steps:
     # Uses GitHub-s checkout action to check out code from the master branch
     - uses: actions/checkout@v2
@@ -31,7 +24,10 @@ jobs:
       
     # Publishes the Blazor project to the release folder
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorTestApp.csproj -c Release -o release -nologo
+      run: |
+        cd ./BlazorTestApp
+        ls -a
+        dotnet publish BlazorTestApp.csproj -c Release -o release -nologo
 
     # Changes the base tag in index.html from -/- to -BlazorTestApp- to match the GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to BlazorTestApp
