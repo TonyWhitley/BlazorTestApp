@@ -9,6 +9,13 @@ jobs:
   deploy-to-github-pages:
     # Use Ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./BlazorTestApp
+
+    - name: print dir 1
+      run: ls -a
+
     steps:
     # Uses GitHub-s checkout action to check out code from the master branch
     - uses: actions/checkout@v2
@@ -20,12 +27,6 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: print dir
-      run: ls -a
-      
-    - name: change dir
-      run: cd BlazorTestApp
-
-    - name: print dir 2
       run: ls -a
       
     # Publishes the Blazor project to the release folder
