@@ -23,8 +23,11 @@ jobs:
       run: ls -a
       
     - name: change dir
-      run: cd BlazorTestApp/BlazorTestApp
+      run: cd BlazorTestApp
 
+    - name: print dir 2
+      run: ls -a
+      
     # Publishes the Blazor project to the release folder
     - name: Publish .NET Core Project
       run: dotnet publish BlazorTestApp.csproj -c Release -o release -nologo
