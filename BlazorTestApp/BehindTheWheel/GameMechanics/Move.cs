@@ -24,7 +24,8 @@ namespace BehindTheWheel.GameMechanics
         }
         internal void fixedThrow(int dice)
         {
-            if (BlazorIndexPage.Password == "TVR. Blackpool's finest")
+            if (System.Diagnostics.Debugger.IsAttached ||
+                BlazorIndexPage.Password == "TVR. Blackpool's finest")
             {
                 var currentSquare = Squares.NextSquare(Player.players[player].CurrentSquare, dice);
                 PlayerModel.playerModel.DisplayThrow(player, dice, currentSquare);

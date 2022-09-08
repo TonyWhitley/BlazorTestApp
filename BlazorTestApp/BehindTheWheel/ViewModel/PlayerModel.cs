@@ -38,30 +38,7 @@ namespace BehindTheWheel.ViewModel
             Index.players[player].Cash = $"Cash: {Player.players[player].Cash.ToString()}";
             Index.players[player].Points = $"Points: {Player.players[player].Points.ToString()}";
 
-            /*
-            textBox.ForeColor = System.Drawing.Color.White;
-            pointsBox.ForeColor = System.Drawing.Color.White;
-            switch (squareType)
-            {
-                case ".GreenSquare":
-                    textBox.BackColor = System.Drawing.Color.Green;
-                    pointsBox.BackColor = System.Drawing.Color.Green;
-                    break;
-                case ".RedSquare":
-                    textBox.BackColor = System.Drawing.Color.Red;
-                    pointsBox.BackColor = System.Drawing.Color.Red;
-                    break;
-                case ".AmberSquare":
-                    textBox.BackColor = System.Drawing.Color.Orange;
-                    pointsBox.BackColor = System.Drawing.Color.Orange;
-                    break;
-                default:
-                    textBox.BackColor = System.Drawing.Color.White;
-                    pointsBox.BackColor = System.Drawing.Color.White;
-                    textBox.ForeColor = System.Drawing.Color.Black;
-                    break;
-            }
-            */
+            Index.CardColour(squareType, player);
         }
 
         public void DisplayThrow(int player, int dice, int currentSquare)

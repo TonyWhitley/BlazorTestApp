@@ -23,7 +23,7 @@ Enter the password:
     </tr>
     <table border="0" style="width:100%">
         <tr style="width:100%">
-            <textarea readonly="readonly" align="left" border="1" style="height:300px">@players[0].Text
+            <textarea readonly="readonly" align="left" border="1" style=@CardStyle[0]>@players[0].Text
                 </textarea>
         </tr>
         <tr align="center">
@@ -36,7 +36,7 @@ Enter the password:
     <td>
         <table border="0" style="width:100%">
             <tr style="height:300px">
-                <textarea readonly="readonly" align="left" border="1" style="height:300px">@players[1].Text
+                <textarea readonly="readonly" align="left" border="1" style=@CardStyle[1]>@players[1].Text
                 </textarea>
             </tr>
             <tr align="center">
@@ -53,12 +53,12 @@ Enter the password:
                 <textarea readonly="readonly" align="left" border="1" style="height:300px">@commentary
                 </textarea>
             </tr>
+            <tr>
+                Enter the dice throw: <input type="number" @onchange="@diceThrow" />
+                <br />
+            </tr>
         </table>
     </td>
-    <td>
-        Enter the dice throw: <input type="number" @onchange="@diceThrow" />
-        <br />
-        </td>
 
 </table>
 <textarea colspan="3" readonly="readonly" align="center" border="1" style="height:300px" cols="50">@commentary2
@@ -109,7 +109,34 @@ Enter the password:
 
 @code
 {
+    private static string[] CardStyle = { 
+        "background-color: #cfc ; height:300px",
+        "background-color: #cfc ; height:300px"};
 
+    public static void CardColour(string squareType, int cardNo)
+    {
+        switch (squareType)
+        {
+            case ".GreenSquare":
+                CardStyle[cardNo] = "color: white; background-color: green ; height:300px";
+                break;
+            case ".RedSquare":
+                CardStyle[cardNo] = "color: white; background-color: red ; height:300px";
+                break;
+            case ".AmberSquare":
+                CardStyle[cardNo] = "color: white; background-color: orange ; height:300px";
+                break;
+            case ".BrooklandsSquare":
+            case ".FirstBrooklandsSquare":
+            case ".LastBrooklandsSquare":
+                CardStyle[cardNo] = "color: darkblue; background-color: skyblue ; height:300px";
+                break;
+            default:
+                CardStyle[cardNo] = "color: black; background-color: white ; height:300px";
+                break;
+        }
+
+    }
     public static string Password { get; set; }
     public int DiceThrow { get; set; }
 
