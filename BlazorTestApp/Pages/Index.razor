@@ -6,6 +6,10 @@
 
 <h1>Behind The Wheel</h1> <h4>08/09/2022</h4>
 
+Enter the password:
+<input type="text" @bind=@Password />
+<br />
+
 <table border="1">
     <colgroup>
         <col span="2" style="width:40%" />
@@ -18,8 +22,9 @@
 
     </tr>
     <table border="0" style="width:100%">
-        <tr style="height:300px">
-                <td>@players[0].Text</td>
+        <tr style="width:100%">
+            <textarea readonly="readonly" align="left" border="1" style="height:300px">@players[0].Text
+                </textarea>
         </tr>
         <tr align="center">
                 <td>@players[0].Points</td>
@@ -31,7 +36,8 @@
     <td>
         <table border="0" style="width:100%">
             <tr style="height:300px">
-                <td>@players[1].Text</td>
+                <textarea readonly="readonly" align="left" border="1" style="height:300px">@players[1].Text
+                </textarea>
             </tr>
             <tr align="center">
                 <td>@players[1].Points</td>
@@ -98,6 +104,8 @@
 
 @code
 {
+
+    public static string Password { get; set; }
     public static Player[] players = { new Player(name : "Ray", text : "START", points : "Points: 10", "Cash: 0" ),
     new Player(name : "Tony", text : "START", points : "Points: 10", "Cash: 0" )};
     public static string commentary = null;

@@ -3,6 +3,8 @@ using System.Linq;
 
 using BehindTheWheel.ViewModel;
 
+using BlazorIndexPage = BlazorTestApp.Pages.Index;
+
 namespace BehindTheWheel.GameMechanics
 {
     public class Move
@@ -18,7 +20,10 @@ namespace BehindTheWheel.GameMechanics
 
         internal void throwDice()
         {
-            fixedThrow(Dice.GetThrow());
+            if (BlazorIndexPage.Password == "TVR. Blackpool's finest")
+            {
+                fixedThrow(Dice.GetThrow());
+            }
         }
         internal void fixedThrow(int dice)
         {
