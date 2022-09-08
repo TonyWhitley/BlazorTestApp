@@ -1,0 +1,278 @@
+[
+  {
+    "Index": 0,
+    "Text": "Change air filter",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Top up brake and clutch fluid",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace tyre",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Adjust headlights",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fill up screen wash bottle",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change the high tension leads",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change the battery",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change oil filter and oil",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Grease and lubricate",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Adjust handbrake",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace blown bulb",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change the spark plugs",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace the door cards",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Underseal the car",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Rustproof the car",
+    "Points": 1,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change the coil",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit a new fuel pump",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit a new oil pump",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace brake shoes / discs",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Bleed brakes",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Adjust / replace the points",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change the timing belt",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit car stereo",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Repair window winders",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace shock absorbers",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Tune carburettors",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit electronic ignition",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace the radiator",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Wrap exhaust",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Repair rust and bodywork",
+    "Points": 2,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Give the car a full service",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Change the cambelt",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit vented discs",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace body panels",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Replace windscreen",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit a new exhaust",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Reupholster seats",
+    "Points": 3,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Adjust valve timing",
+    "Points": 4,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fix electrical fault",
+    "Points": 4,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Fit adjustable dampers",
+    "Points": 4,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Weld rusted panels",
+    "Points": 4,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Recondition the carburettors with a service kit",
+    "Points": 4,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Respray the car",
+    "Points": 5,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Repair dashboard gauges",
+    "Points": 5,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Port and flow engine head",
+    "Points": 5,
+    "Answers": null
+  },
+  {
+    "Index": 0,
+    "Text": "Bore out cylinders",
+    "Points": 5,
+    "Answers": null
+  }
+]

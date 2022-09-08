@@ -1,4 +1,5 @@
 ﻿@page "/fetchdata"
+@using BehindTheWheel.GameMechanics
 @inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
@@ -11,37 +12,15 @@
 {
     <p><em>Loading...</em></p>
 }
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+
+
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private string[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        TheSpiritOfBrooklandsCards.theSpiritOfBrooklandsCards = await Http.GetFromJsonAsync<List<TheSpiritOfBrooklandsCard>>("resources/theSpiritOfBrooklandsCards.json");
     }
 
     public class WeatherForecast

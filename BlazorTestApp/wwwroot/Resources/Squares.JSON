@@ -1,0 +1,416 @@
+[
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "START",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Win turbo in auction",
+    "Points": 2,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Need new exhaust",
+    "Points": -2,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "£2000 profit from sale of car",
+    "Points": 0,
+    "Cash": 2000
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Best in show prize",
+    "Points": 4,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ToolTimeSquare, BehindTheWheel",
+    "Text": "Tool time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Inherit new classic",
+    "Points": 5,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "Team talk\nOne minute bodywork",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Octane boost in car",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.TechTimeSquare, BehindTheWheel",
+    "Text": "Tech time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Partner finds car receipts",
+    "Points": -4,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ThrowEvenNumberSquare, BehindTheWheel",
+    "Text": "Throw even number to move",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Tow friend home",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GotoBrooklands, BehindTheWheel",
+    "Text": "Go to Brooklands",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Return parts for refund",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ThankYouForVisitingBrooklands, BehindTheWheel",
+    "Text": "Thank you for visiting Brooklands",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "£2000 profit from sale of car",
+    "Points": 0,
+    "Cash": 2000
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ToolTimeSquare, BehindTheWheel",
+    "Text": "Tool time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Favourite road\nSunny day",
+    "Points": 4,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.TechTimeSquare, BehindTheWheel",
+    "Text": "Tech time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Convert garage to home office",
+    "Points": -3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ThrowOddNumberSquare, BehindTheWheel",
+    "Text": "Throw odd number to move",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Excellent respray!",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GoBackThreeSquare, BehindTheWheel",
+    "Text": "Go back three spaces",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Win pub quiz",
+    "Points": 2,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "£2000 profit from sale of car",
+    "Points": 0,
+    "Cash": 2000
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Degrease parts in dishwasher",
+    "Points": 2,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ToolTimeSquare, BehindTheWheel",
+    "Text": "Tool time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Major repair cost",
+    "Points": -5,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "Team talk\n1 minute E10 fuel",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Road trip with mates",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.TechTimeSquare, BehindTheWheel",
+    "Text": "Tech time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Insurance Refund",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ThrowEvenNumberSquare, BehindTheWheel",
+    "Text": "Throw even number to move",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Fastest time on track day",
+    "Points": 4,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.AmberSquare, BehindTheWheel",
+    "Text": "Double points next go",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Traffic jam on M25",
+    "Points": -2,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "£2000 profit from sale of car",
+    "Points": 0,
+    "Cash": 2000
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.ToolTimeSquare, BehindTheWheel",
+    "Text": "Tool time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Pay insurance",
+    "Points": -2,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.WelcomeToBrooklands, BehindTheWheel",
+    "Text": "Welcome to Brooklands\nGo to No.1",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.TechTimeSquare, BehindTheWheel",
+    "Text": "Tech time",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.RedSquare, BehindTheWheel",
+    "Text": "Caught speeding",
+    "Points": -3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.Square, BehindTheWheel",
+    "Text": "Team talk\n1 minute Tyres",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.GreenSquare, BehindTheWheel",
+    "Text": "Take mechanic course",
+    "Points": 3,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.LastSquare, BehindTheWheel",
+    "Text": "Convert car to electric",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.FirstBrooklandsSquare, BehindTheWheel",
+    "Text": "Gift shop/\nStart line",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Historic race track",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Flight shed",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Test hill",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Shell, BP and Pratt's Pagoda",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "First to Fastest",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Paddock & Scoreboard",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Sunbeam Cafe",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Press Hut",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Dunlop Mac's Bungalow",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Jackson Shed",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "ERA and Campbell Shed",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Stratosphere Chamber",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Aircraft Park",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Concorde",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Avro Shed",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Club House",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "World's First Ticket Office",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "Campbell Gate",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "When was the track officially opened?",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "What year did it host the first British Grand Prix?",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.BrooklandsSquare, BehindTheWheel",
+    "Text": "How long did the track take to build?",
+    "Points": 0,
+    "Cash": 0
+  },
+  {
+    "$type": "BehindTheWheel.GameMechanics.LastBrooklandsSquare, BehindTheWheel",
+    "Text": "What is the length of the circuit?",
+    "Points": 0,
+    "Cash": 0
+  }
+]
