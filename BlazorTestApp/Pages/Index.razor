@@ -55,6 +55,11 @@ Enter the password:
             </tr>
         </table>
     </td>
+    <td>
+        Enter the dice throw: <input type="number" @onchange="@diceThrow" />
+        <br />
+        </td>
+
 </table>
 <textarea colspan="3" readonly="readonly" align="center" border="1" style="height:300px" cols="50">@commentary2
         </textarea>
@@ -106,13 +111,21 @@ Enter the password:
 {
 
     public static string Password { get; set; }
+    public int DiceThrow { get; set; }
+
+    public BehindTheWheel.GameMechanics.Move mv = new BehindTheWheel.GameMechanics.Move();
+
+    private void diceThrow(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        DiceThrow = Int32.Parse((string)args.Value);
+        mv.fixedThrow(DiceThrow);
+    }
     public static Player[] players = { new Player(name : "Ray", text : "START", points : "Points: 10", "Cash: 0" ),
     new Player(name : "Tony", text : "START", points : "Points: 10", "Cash: 0" )};
     public static string commentary = null;
     public static string commentary2 = null;
 
 
-    public BehindTheWheel.GameMechanics.Move mv = new BehindTheWheel.GameMechanics.Move();
 
 
     public class Player
