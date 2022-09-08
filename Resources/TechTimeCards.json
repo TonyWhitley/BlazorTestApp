@@ -1,0 +1,502 @@
+[
+  {
+    "Index": 0,
+    "Text": "Why port an engine?",
+    "Points": 3,
+    "Answers": [
+      "It gives better fuel and air flow",
+      "It gives better fuel and air flow",
+      "It gives better fuel and air flow"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What does an overdrive do?",
+    "Points": 3,
+    "Answers": [
+      "It’s a higher ration gear for relaxed cruising",
+      "It’s a higher ration gear for relaxed cruising",
+      "It’s a higher ration gear for relaxed cruising"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Why fit electronic ignition?",
+    "Points": 3,
+    "Answers": [
+      "It generates electrical impulses to give a better spark which doesn’t degrade",
+      "It generates electrical impulses to give a better spark which doesn’t degrade",
+      "It generates electrical impulses to give a better spark which doesn’t degrade"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Will fitting wider tyres make the steering lighter or heavier?",
+    "Points": 3,
+    "Answers": [
+      "Lighter  Heavier",
+      "Lighter  Heavier",
+      "Lighter  Heavier"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Why cover battery terminals?",
+    "Points": 3,
+    "Answers": [
+      "To avoid them shorting out on metal components",
+      "To avoid them shorting out on metal components",
+      "To avoid them shorting out on metal components"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Is it better to draw in hot air or cold air for the petrol mix",
+    "Points": 3,
+    "Answers": [
+      "Hot  Cold",
+      "Hot  Cold",
+      "Hot  Cold"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is a ‘Cherry Bomb’",
+    "Points": 3,
+    "Answers": [
+      "An exhaust silencer",
+      "An exhaust silencer",
+      "An exhaust silencer"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "How many DVLA point to keep historic car status?",
+    "Points": 3,
+    "Answers": [
+      "8",
+      "8",
+      "8"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Which of these are modification point categories? Chassis  Suspension  Axles  Transmission  Steering  Engine",
+    "Points": 3,
+    "Answers": [
+      "All",
+      "All",
+      "All"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What are the colloquial terms for the stages of the 4 stroke cycle?",
+    "Points": 3,
+    "Answers": [
+      "Suck, squeeze, bang, blow",
+      "Suck, squeeze, bang, blow",
+      "Suck, squeeze, bang, blow"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Where does the power from the coil go to?",
+    "Points": 3,
+    "Answers": [
+      "The distributer",
+      "The distributer",
+      "The distributer"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the most common firing order of a 4 cylinder engine",
+    "Points": 3,
+    "Answers": [
+      "1-3-4-2",
+      "1-3-4-2",
+      "1-3-4-2"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the most common firing order of a 6 cylinder engine",
+    "Points": 3,
+    "Answers": [
+      "1-5-3-6-2-4",
+      "1-5-3-6-2-4",
+      "1-5-3-6-2-4"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the earth cable on the battery usually connected to?",
+    "Points": 3,
+    "Answers": [
+      "The bodywork",
+      "The bodywork",
+      "The bodywork"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "On a bolt and nut specification, what does UNF mean?",
+    "Points": 3,
+    "Answers": [
+      "Unified fine",
+      "Unified fine",
+      "Unified fine"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Why fit a dry sump?",
+    "Points": 3,
+    "Answers": [
+      "Holds more oil  Better for cornering when driving hard  Allows you to fit a shallower oil pan so that the car can be lower to the road",
+      "Holds more oil  Better for cornering when driving hard  Allows you to fit a shallower oil pan so that the car can be lower to the road",
+      "Holds more oil  Better for cornering when driving hard  Allows you to fit a shallower oil pan so that the car can be lower to the road"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Why use silicon hoses?",
+    "Points": 3,
+    "Answers": [
+      "Greater operating temperature  More flexible  Last longer",
+      "Greater operating temperature  More flexible  Last longer",
+      "Greater operating temperature  More flexible  Last longer"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Where is the reverse light activation switch usually mounted?",
+    "Points": 3,
+    "Answers": [
+      "The gearbox",
+      "The gearbox",
+      "The gearbox"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "How does a turbo increase the power of the engine?",
+    "Points": 3,
+    "Answers": [
+      "It forces more air into the engine cylinders",
+      "It forces more air into the engine cylinders",
+      "It forces more air into the engine cylinders"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "How does a supercharger increase the power of the engine?",
+    "Points": 3,
+    "Answers": [
+      "It increases the volume of air into the engine",
+      "It increases the volume of air into the engine",
+      "It increases the volume of air into the engine"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Which of these is a car steering system?",
+    "Points": 3,
+    "Answers": [
+      "Steering box  Rack and pinion",
+      "Steering box  Rack and pinion",
+      "Steering box  Rack and pinion"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the technique of operating the brake and accelerator simultaneously known as?",
+    "Points": 3,
+    "Answers": [
+      "Heal and toe",
+      "Heal and toe",
+      "Heal and toe"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What are hazard warning lights known as in America?",
+    "Points": 3,
+    "Answers": [
+      "Four ways",
+      "Four ways",
+      "Four ways"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What’s the most common antifreeze colour used in a classic car",
+    "Points": 3,
+    "Answers": [
+      "Blue",
+      "Blue",
+      "Blue"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What should you do if your radiator water is orange / brown?",
+    "Points": 3,
+    "Answers": [
+      "Flush it to remove rust",
+      "Flush it to remove rust",
+      "Flush it to remove rust"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the function of the thermostat?",
+    "Points": 3,
+    "Answers": [
+      "It enables the engine to warm up more quickly",
+      "It enables the engine to warm up more quickly",
+      "It enables the engine to warm up more quickly"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the most common grade of oil that classic cars use?",
+    "Points": 3,
+    "Answers": [
+      "20/50",
+      "20/50",
+      "20/50"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What does a throttle body do?",
+    "Points": 3,
+    "Answers": [
+      "It regulates air into the fuel injection system",
+      "It regulates air into the fuel injection system",
+      "It regulates air into the fuel injection system"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What effect does Ethanol have on a classic car?",
+    "Points": 3,
+    "Answers": [
+      "It perishes fuel pipe rubber  It causes steel components to rust",
+      "It perishes fuel pipe rubber  It causes steel components to rust",
+      "It perishes fuel pipe rubber  It causes steel components to rust"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Which of these are used for car interiors? Leather  Vinyl  Cloth  Wood  Plastic  Velour",
+    "Points": 3,
+    "Answers": [
+      "All",
+      "All",
+      "All"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "How old does a car have to be to attain historic status",
+    "Points": 3,
+    "Answers": [
+      "40 years old",
+      "40 years old",
+      "40 years old"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Why wrap an exhaust?",
+    "Points": 3,
+    "Answers": [
+      "It keeps the engine bay cooler and makes the engine run more efficiently",
+      "It keeps the engine bay cooler and makes the engine run more efficiently",
+      "It keeps the engine bay cooler and makes the engine run more efficiently"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the purpose of a carburettor?",
+    "Points": 3,
+    "Answers": [
+      "It regulates fuel and air into the engine",
+      "It regulates fuel and air into the engine",
+      "It regulates fuel and air into the engine"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Why are twin carburettors more efficient than one single unit?",
+    "Points": 3,
+    "Answers": [
+      "Twin carbs deliver fuel to specific cylinders rather than all of them",
+      "Twin carbs deliver fuel to specific cylinders rather than all of them",
+      "Twin carbs deliver fuel to specific cylinders rather than all of them"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What’s the purpose of an engine fan?",
+    "Points": 3,
+    "Answers": [
+      "It cools the water flowing around the engine",
+      "It cools the water flowing around the engine",
+      "It cools the water flowing around the engine"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is commonly referred to as the ‘nut behind the wheel’?",
+    "Points": 3,
+    "Answers": [
+      "The driver",
+      "The driver",
+      "The driver"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the purpose of a limited slip differential?",
+    "Points": 3,
+    "Answers": [
+      "It allows one wheel to keep traction whilst the other wheel is spinning",
+      "It allows one wheel to keep traction whilst the other wheel is spinning",
+      "It allows one wheel to keep traction whilst the other wheel is spinning"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is a torque wrench used for?",
+    "Points": 3,
+    "Answers": [
+      "It’s used to tighten components to a value pre-determined in the vehicle technical manual",
+      "It’s used to tighten components to a value pre-determined in the vehicle technical manual",
+      "It’s used to tighten components to a value pre-determined in the vehicle technical manual"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Which was the first car manufacturer to fit seat belts as standard?",
+    "Points": 3,
+    "Answers": [
+      "Volvo",
+      "Volvo",
+      "Volvo"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What does a speedo cable usually fit between?",
+    "Points": 3,
+    "Answers": [
+      "The gearbox and speedometer",
+      "The gearbox and speedometer",
+      "The gearbox and speedometer"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What brake fluid does a classic car usually use?",
+    "Points": 3,
+    "Answers": [
+      "Dot 4 or Dot 5",
+      "Dot 4 or Dot 5",
+      "Dot 4 or Dot 5"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What are remoulds?",
+    "Points": 3,
+    "Answers": [
+      "A worn tyre that has been given a new tread",
+      "A worn tyre that has been given a new tread",
+      "A worn tyre that has been given a new tread"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the secret for installing new glass into a classic car?",
+    "Points": 3,
+    "Answers": [
+      "Use a strong, thin cable in the window channel",
+      "Use a strong, thin cable in the window channel",
+      "Use a strong, thin cable in the window channel"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Should a fuel pump be installed near the fuel tank or under the bonnet?",
+    "Points": 3,
+    "Answers": [
+      "Either  Near the fuel tank  Under the bonnet",
+      "Either  Near the fuel tank  Under the bonnet",
+      "Either  Near the fuel tank  Under the bonnet"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What is the name of the clips used to attach car seat material to the car seat frame?",
+    "Points": 3,
+    "Answers": [
+      "Hog rings",
+      "Hog rings",
+      "Hog rings"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Which of these are a form of welding? MIG  TIG  Arc  Flux Cored, Gas",
+    "Points": 3,
+    "Answers": [
+      "All",
+      "All",
+      "All"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Which of these are a type of car paint? Cellulose  2-pack  Acryllic",
+    "Points": 3,
+    "Answers": [
+      "All",
+      "All",
+      "All"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What type of antifreeze should you use in a Type 2 VW Camper Van?",
+    "Points": 3,
+    "Answers": [
+      "None, it’s air cooled",
+      "None, it’s air cooled",
+      "None, it’s air cooled"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "Where would you find a gudgeon pin?",
+    "Points": 3,
+    "Answers": [
+      "In the engine",
+      "In the engine",
+      "In the engine"
+    ]
+  },
+  {
+    "Index": 0,
+    "Text": "What component did the alternator replace?",
+    "Points": 3,
+    "Answers": [
+      "The dynamo",
+      "The dynamo",
+      "The dynamo"
+    ]
+  }
+]
