@@ -2,8 +2,116 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Behind The Wheel</h1> <h4>08/09/2022</h4>
 
-Welcome to your new app.
+<table border="1">
+    <colgroup>
+        <col span="2" style="width:40%" />
+        <col span="3" style="width:20%" />
+    </colgroup>
+    <tr>
+        <td align="center">@players[0].Name</td>
+        <td align="center">@players[1].Name</td>
+        <td align="center"><button class="btn btn-primary" @onclick="ThrowDice">Click me</button></td>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    </tr>
+    <table border="0" style="width:100%">
+        <tr style="height:300px">
+                <td>@players[0].Text</td>
+        </tr>
+        <tr align="center">
+                <td>@players[0].Points</td>
+        </tr>
+            <tr align="center">
+                <td>@players[0].Cash</td>
+            </tr>
+        </table>
+    <td>
+        <table border="0" style="width:100%">
+            <tr style="height:300px">
+                <td>@players[1].Text</td>
+            </tr>
+            <tr align="center">
+                <td>@players[1].Points</td>
+            </tr>
+            <tr align="center">
+                <td>@players[0].Cash</td>
+            </tr>
+        </table>
+    </td>
+    <td>
+        <table border="1" style="width:100%">
+            <tr>
+                <textarea readonly="readonly" align="left" border="1" style="height:300px">@commentary
+                </textarea>
+            </tr>
+        </table>
+    </td>
+</table>
+
+
+<Window x:Class = "XAMLGrid.Window1" 
+   xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+   xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml" 
+   Title = "Window1" Height = "300" Width = "604"> 
+	
+   <Grid x:Name = "FormLayoutGrid" Background = "LightGray"> 
+      <Grid.ColumnDefinitions> 
+         <ColumnDefinition Width = "Auto" /> 
+         <ColumnDefinition /> 
+      </Grid.ColumnDefinitions> 
+		
+      <Grid.RowDefinitions> 
+         <RowDefinition Height = "*" /> 
+         <RowDefinition Height = "*" /> 
+         <RowDefinition Height = "*" /> 
+      </Grid.RowDefinitions> 
+		
+      <TextBlock Grid.Row = "0" Grid.Column = "0" Text = "Name" 
+         Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" 
+         Width = "100"/> 
+      
+      <TextBox Grid.Row = "0" Grid.Column = "1" Margin = "10"/> 
+      <TextBlock Grid.Row = "1" Grid.Column = "0" Text = "ID" Margin = "10" 
+         HorizontalAlignment = "Left" VerticalAlignment = "Center" Width = "100"/> 
+      
+      <TextBox Grid.Row = "1" Grid.Column = "1" Margin = "10"/> 
+      <TextBlock Grid.Row = "2" Grid.Column = "0" Text = "Age" Margin = "10" 
+         HorizontalAlignment = "Left" VerticalAlignment = "Center" Width = "100"/> 
+      
+      <TextBox Grid.Row = "2" Grid.Column = "1" Margin = "10"/>
+   </Grid> 
+	
+</Window>	
+
+
+@code
+{
+    private static Player[] players = { new Player(name : "Ray", text : "This is the square", points : "Points: 3", "Cash: 0" ),
+    new Player(name : "Tony", text : "This is a different square", points : "Points: 5", "Cash: 0" )};
+    private static string commentary = "This is the commentary on the game";
+
+    public class Player
+    {
+        public string Name { get; set; }
+
+        public string Text { get; set; }
+
+        public string Points { get; set; }
+
+        public string Cash { get; set; }
+
+        public Player(string name, string text, string points, string cash)
+        {
+            Name = name;
+            Text = text;
+            Points = points;
+            Cash = cash;
+        }
+    }
+    private void ThrowDice()
+    {
+        players[0].Text = "Now we've moved to another square";
+        commentary += "\nDice thrown";
+    }
+}
