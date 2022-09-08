@@ -35,6 +35,8 @@ namespace BehindTheWheel.GameMechanics
             // Display status after any actions
             Player.players[player].CurrentSquare = tuple.Item1;
             Player.players[player].Points += tuple.Item2;
+            Player.players[player].Cash += Squares.board[currentSquare].Cash;
+            Player.players[player].Points += Squares.board[currentSquare].Points;
             PlayerModel.playerModel.Update(player,
                 Player.players[player].Points,
                 Player.players[player].Cash,

@@ -33,8 +33,6 @@ namespace BehindTheWheel.ViewModel
             {
                 squareText = "Brooklands Square\n\n" + squareText;
             }
-            Player.players[player].Cash += currentSquare.Cash;
-            Player.players[player].Points += currentSquare.Points;
             Index.players[player].Name = Player.players[player].Name;
             Index.players[player].Text = squareText;
             Index.players[player].Cash = $"Cash: {Player.players[player].Cash.ToString()}";
