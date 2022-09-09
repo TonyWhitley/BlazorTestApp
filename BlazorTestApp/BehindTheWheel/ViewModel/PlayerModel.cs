@@ -57,8 +57,8 @@ namespace BehindTheWheel.ViewModel
 
         public static void DisplayToolTime(ToolTimeCard toolTimeCard)
         {
-            string points = toolTimeCard.Points > 1 ? "Points" : "Point";
-            Index.commentary2 = $"TOOL TIME\n\n{toolTimeCard.Text}\n\n{toolTimeCard.Points} " + points + "\n\n";
+            string points = toolTimeCard.Points > 1 ? " Points deducted" : " Point deducted";
+            Index.ConfirmOpenDialog("TOOL TIME", new List<string>() { toolTimeCard.Text, toolTimeCard.Points + points });
 
             /*MessageBox.Show($"{toolTimeCard.Text}\n\n{toolTimeCard.Points} " + points,
                  "Maintenance To Be Done",
@@ -91,20 +91,25 @@ namespace BehindTheWheel.ViewModel
             {
                 await Task.Delay(100);
             }
-            if (answers[Index.response] == techTimeCard.Answers[0].Substring(3))
+            var answer = answers[Index.response].Substring(3);
+            if (techTimeCard.Answers[0] == answer)
             {
                 TechTimeResult = 3; // points
-                Index.commentary2 = "Right answer!\n3 points";
+                Index.ConfirmOpenDialog("Right answer!",new List<string>() { "3 points"});
             }
-            TechTimeResult = 0; // points
-            //debug Index.commentary2 = $"Correct answer was {techTimeCard.Answers[0]}\nnot {answers[Index.response].Substring(3)}";
+            else
+            {
+                TechTimeResult = 0; // points
+                Index.ConfirmOpenDialog("Wrong answer",new List<string>() { "Correct answer was", techTimeCard.Answers[0], "not " + answer });
+            }
+            Index.mv.Score(TechTimeResult);
+            Index.Instance.refreshTheScreen();
         }
 
         public static void DisplaytheSpiritOfBrooklands(TheSpiritOfBrooklandsCard theSpiritOfBrooklandsCard, string title)
         {
-            string points = theSpiritOfBrooklandsCard.Points > 1 ? "Points" : "Point";
-            Index.commentary2 = $"{title}\n\n{theSpiritOfBrooklandsCard.Text}\n\n{theSpiritOfBrooklandsCard.Points} " + points + "\n\n";
-
+            string points = theSpiritOfBrooklandsCard.Points > 1 ? " Points" : " Point";
+            Index.ConfirmOpenDialog(title, new List<string>() { theSpiritOfBrooklandsCard.Text, theSpiritOfBrooklandsCard.Points +  points });
             /*MessageBox.Show($"{theSpiritOfBrooklandsCard.Text}\n\n{theSpiritOfBrooklandsCard.Points} " + points,
                  $"{theSpiritOfBrooklandsCard.Index.ToString()}: {title}",
                 MessageBoxButtons.OK

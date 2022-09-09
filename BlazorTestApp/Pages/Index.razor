@@ -62,8 +62,6 @@ Enter the password:
     </td>
 
 </table>
-<textarea colspan="3" readonly="readonly" align="center" border="1" style="height:300px" cols="50">@commentary2
-</textarea>
 
 @*Pop up test*@
 
@@ -78,6 +76,14 @@ Enter the password:
         Answers="@message"
         OnClose="@OnDialogClose"
         Type="Dialog.Category.OneTwoThree">
+    </Dialog>
+}
+@if (ConfirmDialogIsOpen)
+{
+    <Dialog Caption="@dialogTitle"
+        Answers="@message"
+        OnClose="@OnDialogClose"
+        Type="Dialog.Category.Okay">
     </Dialog>
 }
 
@@ -156,21 +162,30 @@ Enter the password:
     public static string Password { get; set; }
     public int DiceThrow { get; set; }
 
-    public BehindTheWheel.GameMechanics.Move mv = new BehindTheWheel.GameMechanics.Move();
+    public static BehindTheWheel.GameMechanics.Move mv = new BehindTheWheel.GameMechanics.Move();
+    public static BlazorTestApp.Pages.Index Instance;
+
+    public Index()
+    {
+        Instance = this;
+    }
+
+    public void refreshTheScreen()
+    {
+        Task.Run(StateHasChanged);
+    }
 
     private int diceNumber;
     private void diceThrow(KeyboardEventArgs args)
     {
         if (args.Code == "Enter")
         {
-            //DiceThrow = Int32.Parse((string)args.Value);
             mv.fixedThrow(diceNumber);
         }
     }
     public static Player[] players = { new Player(name : "Ray", text : "START", points : "Points: 10", "Cash: 0" ),
     new Player(name : "Tony", text : "START", points : "Points: 10", "Cash: 0" )};
     public static string commentary = null;
-    public static string commentary2 = null;
 
 
 
@@ -208,8 +223,10 @@ Enter the password:
     }
 
     public static Boolean DialogIsOpen { get; set; }
+    public static Boolean ConfirmDialogIsOpen { get; set; }
     private string publisherName = "FRED";
     private static List<string> message;
+    private static string dialogTitle;
     public static int response;
 
     public static void OpenDialog(List<string> answers)
@@ -218,10 +235,17 @@ Enter the password:
         response = -1;
         message = answers;
     }
+    public static void ConfirmOpenDialog(string title, List<string> answers)
+    {
+        dialogTitle = title;
+        ConfirmDialogIsOpen = true;
+        message = answers;
+    }
     private async Task OnDialogClose(int selection)
     {
         response = selection;
         DialogIsOpen = false;
+        ConfirmDialogIsOpen = false;
     }
 }
 

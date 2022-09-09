@@ -108,19 +108,16 @@ namespace BehindTheWheel.GameMechanics
         /// <returns></returns>
         public override Tuple <int, int> OnLandingAction(int currentSquare)
         {
-            int points = 0;
             try
             {
                 var card = TechTimeCards.Card();
                 var X = PlayerModel.DisplayTechTimeAsync(card);
-                //X.Wait();
-                points = PlayerModel.TechTimeResult;
             }
             catch (Exception ex)
             { 
                 var err = ex.Message;
             }
-            return Tuple.Create(currentSquare, points);
+            return Tuple.Create(currentSquare, 0);
         }
     }
     internal class ThrowEvenNumberSquare : Square
