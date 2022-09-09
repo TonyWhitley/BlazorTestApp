@@ -118,6 +118,7 @@ Bore out cylinders;5".Split('\n');
 
                 }
             }
+            toolTimeIndex = Utilities.GetRandom(0, toolTimeCards.Count);
         }
         internal static int toolTimeIndex = 0;
         public static ToolTimeCard Card()
@@ -231,6 +232,7 @@ What component did the alternator replace?;The dynamo;The dynamo;The dynamo;3".S
 
                 }
             }
+            techTimeIndex = Utilities.GetRandom(0, techTimeCards.Count);
         }
         internal static int techTimeIndex = 0;
         public static TechTimeCard Card()

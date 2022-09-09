@@ -1,0 +1,98 @@
+﻿@*https://medium.com/informatics/blazor-server-project-6-how-to-create-reusable-modal-dialog-component-e2fdc612089b*@
+<div class="modal fade show" id="myModal" style="display:block; background-color: rgba(10,10,10,.8);" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">@Caption</h4>
+                <button type="button" class="close"
+                        @onclick="@Cancel">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach (var item in Answers)
+                {
+                    <p>@item</p> 
+                }
+            </div>
+            <div class="modal-footer">
+                @switch (Type)
+                {
+                    case Category.Okay:
+                        <button type="button" class="btn btn-primary"
+                        @onclick=@Ok>
+                            OK
+                        </button>
+                        break;
+                    case Category.SaveNot:
+                        <button type="button" class="btn btn-primary"
+                        @onclick=@Ok>
+                            Save
+                        </button>
+                        <button type="button" class="btn btn-warning"
+                        @onclick="@Cancel">
+                            Don't Save
+                        </button>
+                        break;
+                    case Category.DeleteNot:
+                        <button type="button" class="btn btn-danger"
+                        @onclick=@Ok>
+                            Delete
+                        </button>
+                        <button type="button" class="btn btn-warning"
+                        @onclick="@Cancel">
+                            Don't Delete
+                        </button>
+                        break;
+                    case Category.OneTwoThree:
+                        <button type="button" class="btn btn-danger"
+                        @onclick=@One>
+                            1
+                        </button>
+                        <button type="button" class="btn btn-warning"
+                        @onclick="@Two">
+                            2
+                        </button>
+                        <button type="button" class="btn btn-primary"
+                        @onclick="@Three">
+                            3
+                        </button>
+                        break;
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public string Caption { get; set; }
+    [Parameter] public List<string> Answers { get; set; }
+    [Parameter] public EventCallback<int> OnClose { get; set; }
+    [Parameter] public Category Type { get; set; }
+    private Task Cancel()
+    {
+        return OnClose.InvokeAsync(0);
+    }
+    private Task Ok()
+    {
+        return OnClose.InvokeAsync(1);
+    }
+    private Task One()
+    {
+        return OnClose.InvokeAsync(1);
+    }
+    private Task Two()
+    {
+        return OnClose.InvokeAsync(2);
+    }
+    private Task Three()
+    {
+        return OnClose.InvokeAsync(3);
+    }
+    public enum Category
+    {
+        Okay,
+        SaveNot,
+        DeleteNot,
+        OneTwoThree
+    }
+}

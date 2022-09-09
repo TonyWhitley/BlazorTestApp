@@ -63,8 +63,23 @@ Enter the password:
 
 </table>
 <textarea colspan="3" readonly="readonly" align="center" border="1" style="height:300px" cols="50">@commentary2
-        </textarea>
+</textarea>
 
+@*Pop up test*@
+
+@*<button type="button" class="btn btn-primary"
+        @onclick="() => OpenDialog(new List<string> {publisherName})">
+    &#8195;Save&#8195;
+</button>&#8194;
+*@
+@if (DialogIsOpen)
+{
+    <Dialog Caption="Tech Time"
+        Answers="@message"
+        OnClose="@OnDialogClose"
+        Type="Dialog.Category.OneTwoThree">
+    </Dialog>
+}
 
 <Window x:Class = "XAMLGrid.Window1" 
    xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
@@ -190,6 +205,23 @@ Enter the password:
         TheSpiritOfBrooklandsCards.Load();
         ToolTimeCards.Load();
         TechTimeCards.Load();
+    }
+
+    public static Boolean DialogIsOpen { get; set; }
+    private string publisherName = "FRED";
+    private static List<string> message;
+    public static int response;
+
+    public static void OpenDialog(List<string> answers)
+    {
+        DialogIsOpen = true;
+        response = -1;
+        message = answers;
+    }
+    private async Task OnDialogClose(int selection)
+    {
+        response = selection;
+        DialogIsOpen = false;
     }
 }
 

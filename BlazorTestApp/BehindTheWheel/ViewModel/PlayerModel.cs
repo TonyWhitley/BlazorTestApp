@@ -45,7 +45,7 @@ namespace BehindTheWheel.ViewModel
         {
             string text = $"{Player.players[player].Name} throws {dice}\n";
             Index.commentary += text;
-            Index.commentary2 = "";
+            //Index.commentary2 = "";
             /*
             Program.MainWindow.textBoxCommentary.AppendText(text);
             AutoClosingMessageBox.Show($"Moves to square {currentSquare}:\n'{Squares.board[currentSquare].Text}'", 
@@ -66,24 +66,40 @@ namespace BehindTheWheel.ViewModel
                 );
             */
         }
-        public static void DisplayTechTime(TechTimeCard techTimeCard)
+        public static int TechTimeResult;
+        public static async Task DisplayTechTimeAsync(TechTimeCard techTimeCard)
         {
             string text = "TECH TIME\n\n" + techTimeCard.Text;
+            List<string> answers = new List<string>() { techTimeCard.Text };
             int ansNumber = 1;
             for (var i = 0; i < techTimeCard.Answers.Length; i++)
             {
                 if (techTimeCard.Answers[i].Length == 0)
                     continue;   // empty answer
                 text += $"\n {ansNumber}. {techTimeCard.Answers[i]}";
+                answers.Add($"{ansNumber}. {techTimeCard.Answers[i]}");
                 ansNumber++;
             }
-            Index.commentary2 = text + "\n\n";
+            Index.OpenDialog(answers);
+            //Index.commentary2 = text + "\n\n";
             /*MessageBox.Show(text,
                  $"{techTimeCard.Index}.",
                 MessageBoxButtons.OK
                 );
             */
+            while (Index.response == -1)
+            {
+                await Task.Delay(100);
+            }
+            if (answers[Index.response] == techTimeCard.Answers[0].Substring(3))
+            {
+                TechTimeResult = 3; // points
+                Index.commentary2 = "Right answer!\n3 points";
+            }
+            TechTimeResult = 0; // points
+            //debug Index.commentary2 = $"Correct answer was {techTimeCard.Answers[0]}\nnot {answers[Index.response].Substring(3)}";
         }
+
         public static void DisplaytheSpiritOfBrooklands(TheSpiritOfBrooklandsCard theSpiritOfBrooklandsCard, string title)
         {
             string points = theSpiritOfBrooklandsCard.Points > 1 ? "Points" : "Point";
