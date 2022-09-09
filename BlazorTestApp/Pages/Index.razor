@@ -4,13 +4,13 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Behind The Wheel</h1> <h4>08/09/2022</h4>
+<h1>Behind The Wheel</h1> <h4>09/09/2022</h4>
 
 Enter the password:
 <input type="text" @bind=@Password />
 <br />
 
-<table border="1">
+<table border="1" style="width:500px">
     <colgroup>
         <col span="2" style="width:40%" />
         <col span="3" style="width:20%" />
@@ -54,8 +54,9 @@ Enter the password:
                 </textarea>
             </tr>
             <tr>
-                Enter the dice throw: <input type="number" @onchange="@diceThrow" />
-                <br />
+                Enter the dice throw:
+                <input type="number" @bind=diceNumber @onkeyup="@diceThrow" />
+                @*onkeyup AFTER number has been entered*@
             </tr>
         </table>
     </td>
@@ -142,10 +143,14 @@ Enter the password:
 
     public BehindTheWheel.GameMechanics.Move mv = new BehindTheWheel.GameMechanics.Move();
 
-    private void diceThrow(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    private int diceNumber;
+    private void diceThrow(KeyboardEventArgs args)
     {
-        DiceThrow = Int32.Parse((string)args.Value);
-        mv.fixedThrow(DiceThrow);
+        if (args.Code == "Enter")
+        {
+            //DiceThrow = Int32.Parse((string)args.Value);
+            mv.fixedThrow(diceNumber);
+        }
     }
     public static Player[] players = { new Player(name : "Ray", text : "START", points : "Points: 10", "Cash: 0" ),
     new Player(name : "Tony", text : "START", points : "Points: 10", "Cash: 0" )};

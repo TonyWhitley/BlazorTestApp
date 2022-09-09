@@ -11,6 +11,11 @@ namespace BehindTheWheel.GameMechanics
 {
     public static class Utilities
     {
+        private static Random rnd = new Random();
+        public static int GetRandom(int min, int max)
+        {
+            return rnd.Next(min, max);
+        }
         static bool UseDebugFilePaths = System.Diagnostics.Debugger.IsAttached;
         public static String getDefaultLocation(String name, Boolean isFile = true)
         {

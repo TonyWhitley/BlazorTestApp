@@ -10,10 +10,9 @@ namespace BehindTheWheel.GameMechanics
 {
     internal static class Dice
     {
-        private static Random rnd = new Random();
         public static int GetThrow()
         {
-            return rnd.Next(1, 7);
+            return Utilities.GetRandom(1, 7);
         }
     }
     /// <summary>

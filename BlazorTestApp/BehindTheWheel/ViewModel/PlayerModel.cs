@@ -69,9 +69,13 @@ namespace BehindTheWheel.ViewModel
         public static void DisplayTechTime(TechTimeCard techTimeCard)
         {
             string text = "TECH TIME\n\n" + techTimeCard.Text;
+            int ansNumber = 1;
             for (var i = 0; i < techTimeCard.Answers.Length; i++)
             {
-                text += $"\n {i+1}. {techTimeCard.Answers[i]}";
+                if (techTimeCard.Answers[i].Length == 0)
+                    continue;   // empty answer
+                text += $"\n {ansNumber}. {techTimeCard.Answers[i]}";
+                ansNumber++;
             }
             Index.commentary2 = text + "\n\n";
             /*MessageBox.Show(text,
