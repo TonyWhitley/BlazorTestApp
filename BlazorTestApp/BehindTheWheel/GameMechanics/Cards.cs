@@ -13,33 +13,33 @@ namespace BehindTheWheel.GameMechanics
     public class Card
     {
         public int Index { get; internal set; }
-        public string Text { get; private set; }
+        public string Text_Question { get; private set; }
         public int Points { get; private set; }
-        public string[] Answers { get; private set; }
-        public Card(int index, string text, int points, string[] answers)
+        public List<string> Answers { get; private set; }
+        public Card(int index, string text, int points, List<string> answers)
         {
             Index = index;
-            Text = text;
+            Text_Question = text;
             Points = points;
             Answers = answers;
         }
     }
     public class ToolTimeCard : Card
     {
-        public ToolTimeCard(int index, string text=null, int points=0, string[] answers=null) : base(index, text, points, answers)
+        public ToolTimeCard(int index, string text=null, int points=0, List<string> answers = null) : base(index, text, points, answers)
         {
             // "Maintenance To Be Done";
         }
     }
     public class TechTimeCard : Card
     {
-        public TechTimeCard(int index, string text, int points, string[] answers) : base(index, text, points, answers)
+        public TechTimeCard(int index, string question, int points, List<string> answers = null) : base(index, question, points, answers)
         {
         }
     }
     public class TheSpiritOfBrooklandsCard : Card
     {
-        public TheSpiritOfBrooklandsCard(int index, string text, int points, string[] answers=null) : base(index, text, points, answers)
+        public TheSpiritOfBrooklandsCard(int index, string text, int points, List<string> answers=null) : base(index, text, points, answers)
         {
         }
     }
@@ -148,82 +148,73 @@ Bore out cylinders;5".Split('\n');
         public static void Load()
         {
             string[] lines =
-@"Why port an engine?;It gives better fuel and air flow;It gives better fuel and air flow;It gives better fuel and air flow;3
-What does an overdrive do?;It’s a higher ratio gear for relaxed cruising;It’s a higher ratio gear for relaxed cruising;It’s a higher ratio gear for relaxed cruising;3
-Why fit electronic ignition?;It generates electrical impulses to give a better spark which doesn’t degrade;It generates electrical impulses to give a better spark which doesn’t degrade;It generates electrical impulses to give a better spark which doesn’t degrade;3
-Will fitting wider tyres make the steering lighter or heavier?;Heavier;Lighter;;3
-Why cover battery terminals?;To avoid them shorting out on metal components;To avoid them shorting out on metal components;To avoid them shorting out on metal components;3
-Is it better to draw in hot air or cold air for the petrol mix?;Cold;Hot;;3
-What is a ‘Cherry Bomb’?;An exhaust silencer;An exhaust silencer;An exhaust silencer;3
-How many DVLA point to keep historic car status?;8;12;3;3
-Which of these are modification point categories?;All;Chassis, Suspension, Axles;Transmission,  Steering,  Engine;3
-What are the colloquial terms for the stages of the 4 stroke cycle?;Suck, squeeze, bang, blow;Suck, squeeze, bang, blow;Suck, squeeze, bang, blow;3
-Where does the power from the coil go to?;The distributor;The distributor;The distributor;3
-What is the most common firing order of a 4 cylinder engine?;1-3-4-2;1-3-4-2;1-3-4-2;3
-What is the most common firing order of a 6 cylinder engine?;1-5-3-6-2-4;1-5-3-6-2-4;1-5-3-6-2-4;3
-What is the earth cable on the battery usually connected to?;The chassis;The bodywork;The bodywork;3
-On a bolt and nut specification, what does UNF mean?;Unified fine;Unified fine;Unified fine;3
-Why fit a dry sump?;Better for cornering when driving hard;Holds more oil;Allows you to fit a shallower oil pan so that the car can be lower to the road;3
-Why use silicon hoses?;Greater operating temperature  More flexible  Last longer;Greater operating temperature  More flexible  Last longer;Greater operating temperature  More flexible  Last longer;3
-Where is the reverse light activation switch usually mounted?;The gearbox;The gearbox;The gearbox;3
-How does a turbo increase the power of the engine?;It forces more air into the engine cylinders;It forces more air into the engine cylinders;It forces more air into the engine cylinders;3
-How does a supercharger increase the power of the engine?;It increases the volume of air into the engine;It increases the volume of air into the engine;It increases the volume of air into the engine;3
-Which of these is a car steering system?;Both;Rack and pinion;Recirculating ball;3
-What is the technique of operating the brake and accelerator simultaneously known as?;Heel and toe;Heel and toe;Heel and toe;3
-What are hazard warning lights known as in America?;Four ways;Four ways;Four ways;3
-What’s the most common antifreeze colour used in a classic car?;Blue;Orange;Green;3
-What should you do if your radiator water is orange / brown?;Flush it to remove rust;Flush it to remove rust;Flush it to remove rust;3
-What is the function of the thermostat?;It enables the engine to warm up more quickly;It enables the engine to warm up more quickly;It enables the engine to warm up more quickly;3
-What is the most common grade of oil that classic cars use?;20/50;10W40;20/50;3
-What does a throttle body do?;It regulates air into the fuel injection system;It regulates air into the fuel injection system;It regulates air into the fuel injection system;3
-What effect does Ethanol have on a classic car?;It perishes fuel pipe rubber;It causes steel components to rust;It perishes fuel pipe rubber  It causes steel components to rust;3
-Which of these are used for car interiors?;All;Leather, Vinyl, Cloth;Wood, Plastic, Velour;3
-How old does a car have to be to attain historic status;40 years old;75 years old;100 years old;3
-Why wrap an exhaust?;It keeps the engine bay cooler and makes the engine run more efficiently;It keeps the engine bay cooler and makes the engine run more efficiently;It keeps the engine bay cooler and makes the engine run more efficiently;3
-What is the purpose of a carburettor?;It regulates fuel and air into the engine;It regulates fuel and air into the engine;It regulates fuel and air into the engine;3
-Why are twin carburettors more efficient than one single unit?;Twin carbs deliver fuel to specific cylinders rather than all of them;Twin carbs deliver fuel to specific cylinders rather than all of them;Twin carbs deliver fuel to specific cylinders rather than all of them;3
-What’s the purpose of an engine fan?;It cools the water flowing around the engine;It cools the water flowing around the engine;It cools the water flowing around the engine;3
-What is commonly referred to as the ‘nut behind the wheel’?;The driver;The driver;The driver;3
-What is the purpose of a limited slip differential?;It allows one wheel to keep traction whilst the other wheel is spinning;It allows one wheel to keep traction whilst the other wheel is spinning;It allows one wheel to keep traction whilst the other wheel is spinning;3
-What is a torque wrench used for?;It’s used to tighten components to a value pre-determined in the vehicle technical manual;It’s used to tighten components to a value pre-determined in the vehicle technical manual;It’s used to tighten components to a value pre-determined in the vehicle technical manual;3
-Which was the first car manufacturer to fit seat belts as standard?;Volvo;Volvo;Volvo;3
-What does a speedo cable usually fit between?;The gearbox and speedometer;The gearbox and speedometer;The gearbox and speedometer;3
-What brake fluid does a classic car usually use?;Dot 4;Dot 5;;3
-What are remoulds?;A worn tyre that has been given a new tread;A worn tyre that has been given a new tread;A worn tyre that has been given a new tread;3
-What is the secret for installing new glass into a classic car?;Use a strong, thin cable in the window channel;Use a strong, thin cable in the window channel;Use a strong, thin cable in the window channel;3
-Should a fuel pump be installed near the fuel tank or under the bonnet?;Near the fuel tank;Under the bonnet;Either;3
-What is the name of the clips used to attach car seat material to the car seat frame?;Hog rings;Hog rings;Hog rings;3
-Which of these are a form of welding? MIG  TIG  Arc  Flux Cored, Gas;All;All;All;3
-Which of these are a type of car paint?;All;Cellulose;Acrylic;3
-What type of antifreeze should you use in a Type 2 VW Camper Van?;None, it’s air cooled;None, it’s air cooled;None, it’s air cooled;3
-Where would you find a gudgeon pin?;In the engine;In the engine;In the engine;3
-What component did the alternator replace?;The dynamo;The dynamo;The dynamo;3".Split('\n');
+@"Why port an engine?;It gives better fuel and air flow;It cures engine gout;It makes engine oil flow better;It cools the engine down;;;;3
+What does an overdrive do?;It’s a higher ratio gear for relaxed cruising;It acts as a form of cruise control;It mutes back-seat drivers;It’s a form of turbo;;;;3
+Why fit electronic ignition?;It generates electrical impulses to give a better spark which doesn’t degrade;tbd;tbd;;;;;3
+Will fitting wider tyres make the steering lighter or heavier?;Heavier;Lighter;;;;;;3
+Why cover battery terminals?;To avoid them shorting out on metal components;To keep them warm;To keep them cool in the engine bay;To prolong the life of the battery;;;;3
+Is it better to draw in hot air or cold air for the petrol mix;Cold;Hot;;;;;;3
+What is a ‘Cherry Bomb’;An exhaust silencer;A form of air freshener;An engine additive;A reclining passenger seat;;;;3
+How many DVLA point to keep historic car status?;8;2;4;6;;;;3
+Which of these are modification point categories?;tbd;Chassis;Suspension;Axles;Transmission;Steering;Engine;3
+What are the colloquial terms for the stages of the 4 stroke cycle?;Suck, squeeze, bang, blow;Wheeze, squeeze, pop, drip;Bang, clang, stop, repair;On, hope, wish, mechanic;;;;3
+Where does the power from the coil go to?;The distributor;The garage lightbulb;The engine;The carburettor;;;;3
+What is the most common firing order of a 4 cylinder engine;1-3-4-2;1-2-3-4;1-4-2-3;4-3-2-1;;;;3
+What is the most common firing order of a 6 cylinder engine;1-5-3-6-2-4;1-2-3-4-5-6;6-5-4-3-2-1;1-6-2-5-3-4;;;;3
+What is the earth cable on the battery usually connected to?;The bodywork;The engine;The carburettor;The fuel tank;;;;3
+On a bolt and nut specification, what does UNF mean?;Unified fine;You need friends;Unlucky, not fixed;Usually nut frayed;;;;3
+Why fit a dry sump?;Better for cornering when driving hard;Holds more oil;Allows you to fit a shallower oil pan so that the car can be lower to the road;You don’t need to add oil to an engine;tbd;;;3
+Why use silicone hoses?;Greater operating temperature;More flexible;Last longer;They match the colour of the car;;;;3
+Where is the reverse light activation switch usually mounted?;The gearbox;In the boot of the car;On the dashboard;The button on the handbrake;;;;3
+How does a turbo increase the power of the engine?;It forces more air into the engine cylinders;It makes the engine louder;It enables you to add a turbo sticker to your car;It forces air into the carburettor;;;;3
+How does a supercharger increase the power of the engine?;It increases the volume of air into the engine;It makes the engine louder;It enables you to add a turbo sticker to your car;It forces air into the carburettor;;;;3
+Which of these is a car steering system?;Rack and pinion;Suction pad;Joystick;;;;;3
+What is the technique of operating the brake and accelerator simultaneously known as?;Heel and toe;Contortionism;Shoe and shuffle;Foot and mouth;;;;3
+What are hazard warning lights known as in America?;Four ways;Flashers;Moonies;Out-the-ways;;;;3
+What’s the most common antifreeze colour used in a classic car;Blue;Orange;Red;Clear;;;;3
+What should you do if your radiator water is orange / brown?;Flush it to remove rust;Fill it with oil to coat the inside;Run the engine with the radiator cap off;Ignore it;;;;3
+What is the function of the thermostat?;It enables the engine to warm up more quickly;It cools down the engine;It increases the fuel/air mixture;It decreases the fuel/air mixture;;;;3
+What is the most common grade of oil that classic cars use?;20/50;10/60;50/50;20/20;;;;3
+What does a throttle body do?;It regulates air into the fuel injection system;It feeds petrol into the carburettor;It increases the petrol flow to the engine;It makes the accelerator pedal easier to push down;;;;3
+What effect does Ethanol have on a classic car?;It perishes fuel pipe rubber;It causes steel components to rust;It cleans the engine;It stops bodywork rust;;;;3
+Which of these are used for car interiors?;tbd;Leather;Vinyl;Cloth;Wood;Plastic;Velour;3
+How old does a car have to be to attain historic status;40 years old;21 years old;18 years old;45 years old;;;;3
+Why wrap an exhaust?;It keeps the engine bay cooler and makes the engine run more efficiently;It stops exhaust fumes coming into the passenger area;It reduces emissions;It makes the car easier to start in winter;;;;3
+What is the purpose of a carburettor?;It regulates fuel and air into the engine;It regulates petrol being fed into the engine;It regulates air being fed into the engine;It acts as a petrol filter to remove impurities;;;;3
+Why are twin carburettors more efficient than one single unit?;They deliver fuel to specific cylinders rather than all of them;They deliver more fuel into the engine;They enable one to work if the other fails;You can shine them and impress your friends;;;;3
+What’s the purpose of an engine fan?;It cools the water flowing around the engine;It stops leaves getting into the engine bay;It acts as a turbo to force air into the engine;It provides cool air for the heater;;;;3
+What is commonly referred to as the ‘nut behind the wheel’?;The driver;The horn;The gearstick;The pistachios you eat when going on a long trip;;;;3
+What is the purpose of a limited slip differential?;It allows one wheel to keep traction whilst the other wheel is spinning;It enables you to drive in deep snow;It’s a form of anti-lock braking;It’s a car seat support to protect the passenger’s back;;;;3
+What is a torque wrench used for?;It’s used to tighten components to a value pre-determined in the vehicle technical manual;It increases the torque of a vehicle;It converts torque into brake horsepower;To hit a seized component;;;;3
+Which was the first car manufacturer to fit seat belts as standard?;Volvo;BMW;Audi;Little Tikes;;;;3
+What does a speedo cable usually fit between?;The gearbox and speedometer;The front axle and the wheel;The rear axle and the wheel;The gearbox and the clutch;;;;3
+What brake fluid does a classic car usually use?;Dot 4;Dot 1;Dot 2;Dot Cotton;;;;3
+What are remoulds?;A worn tyre that has been given a new tread;A worn tyre that is used on the race track;A tyre used for crash barriers at a race circuit;Cheap second-hand tyres;;;;3
+What is the secret for installing new glass into a classic car?;Use a strong, thin cable in the window channel;Get someone else to do it;Complete a one month weight training course;Put oil around the edge of the glass;;;;3
+Should a fuel pump be installed near the fuel tank or under the bonnet?;tbd;Near the fuel tank;Under the bonnet;Under the dashboard;;;;3
+What is the name of the clips used to attach car seat material to the car seat frame?;Hog rings;Omega rings;Staples;Bodgers;;;;3
+Which of these are a form of welding?;All;MIG;TIG;Arc;Flux Cored, Gas;;;3
+Which of these are a type of car paint?;All;Cellulose;2-pack;Acrylic;;;;3
+What type of antifreeze should you use in a Type 2 VW Camper Van?;None, it’s air cooled;Blue;Orange;Clear;;;;3
+Where would you find a gudgeon pin?;In the engine;In the radiator;In the gearbox;In a haystack;;;;3
+What component did the alternator replace?;The dynamo;Distributor points;Horn relay;Advance and retard lever;;;;3".Split('\n');
             //string[] lines = System.IO.File.ReadAllLines(Utilities.getDefaultLocation(@"Resources\TechTime.tsv"));
-            int[,] randomOrder = new int[,]
-            {
-                { 1, 2, 3 },
-                { 1, 3, 2 },
-                { 2, 1, 3 },
-                { 2, 3, 1 },
-                { 3, 1, 2 },
-                { 3, 2, 1 },
-            };
             string[] columns;
             foreach (string line in lines)
             {
                 try
                 {
                     columns = line.Split(';');
-                    var columnOrder = Utilities.GetRandom(0, 6);
                     if (columns.Length >= 5)
                     {
-                        // Put the answers in random order
-                        string[] answers = new string[3] {
-                            columns[randomOrder[columnOrder, 0]],
-                            columns[randomOrder[columnOrder, 1]],
-                            columns[randomOrder[columnOrder, 2]] };
+                        // Question is column[0]
+                        List<string> answers = new List<string>(); 
+                        for (int i = 1; i < columns.Length - 1; i++)
+                        {
+                            answers.Add(columns[i]);
+                        }
                         techTimeCards.Add(new TechTimeCard(0, columns[0],
-                            int.Parse(columns[4]),
+                            int.Parse(columns[columns.Length-1]),
                             answers));
                     }
                 }

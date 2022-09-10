@@ -58,7 +58,7 @@ namespace BehindTheWheel.ViewModel
         public static void DisplayToolTime(ToolTimeCard toolTimeCard)
         {
             string points = toolTimeCard.Points > 1 ? " Points deducted" : " Point deducted";
-            Index.ConfirmOpenDialog("TOOL TIME", new List<string>() { toolTimeCard.Text, toolTimeCard.Points + points });
+            Index.ConfirmOpenDialog("TOOL TIME", new List<string>() { toolTimeCard.Text_Question, toolTimeCard.Points + points });
 
             /*MessageBox.Show($"{toolTimeCard.Text}\n\n{toolTimeCard.Points} " + points,
                  "Maintenance To Be Done",
@@ -69,17 +69,20 @@ namespace BehindTheWheel.ViewModel
         public static int TechTimeResult;
         public static async Task DisplayTechTimeAsync(TechTimeCard techTimeCard)
         {
-            string text = "TECH TIME\n\n" + techTimeCard.Text;
-            List<string> answers = new List<string>() { techTimeCard.Text };
+            //string text = "TECH TIME\n\n" + techTimeCard.Text_Question;
+            List<string> answers = new List<string>() { techTimeCard.Text_Question };
+            int answerCount = techTimeCard.Answers.Where(x => !x.Equals("")).Count();
+            var columnOrder = Utilities.GetRandomOrder(0, answerCount);
             int ansNumber = 1;
-            for (var i = 0; i < techTimeCard.Answers.Length; i++)
+            // Put the answers in random order
+            for (int i = 0; i < answerCount; i++)
             {
-                if (techTimeCard.Answers[i].Length == 0)
-                    continue;   // empty answer
-                text += $"\n {ansNumber}. {techTimeCard.Answers[i]}";
-                answers.Add($"{ansNumber}. {techTimeCard.Answers[i]}");
+                string answerText = techTimeCard.Answers[columnOrder[i]];
+                answers.Add($"{ansNumber}. {answerText}");
+                //text += $"\n {ansNumber}. {answerText}";
                 ansNumber++;
             }
+            Index.buttonsRequired = answerCount;
             Index.OpenDialog(answers);
             //Index.commentary2 = text + "\n\n";
             /*MessageBox.Show(text,
@@ -109,13 +112,15 @@ namespace BehindTheWheel.ViewModel
         public static void DisplaytheSpiritOfBrooklands(TheSpiritOfBrooklandsCard theSpiritOfBrooklandsCard, string title)
         {
             string points = theSpiritOfBrooklandsCard.Points > 1 ? " Points" : " Point";
-            Index.ConfirmOpenDialog(title, new List<string>() { theSpiritOfBrooklandsCard.Text, theSpiritOfBrooklandsCard.Points +  points });
+            Index.ConfirmOpenDialog(title, new List<string>() { theSpiritOfBrooklandsCard.Text_Question, theSpiritOfBrooklandsCard.Points +  points });
             /*MessageBox.Show($"{theSpiritOfBrooklandsCard.Text}\n\n{theSpiritOfBrooklandsCard.Points} " + points,
                  $"{theSpiritOfBrooklandsCard.Index.ToString()}: {title}",
                 MessageBoxButtons.OK
                 );
             */
         }
+        public static void DisplaytheSpiritOfBrooklandsQuestion(TheSpiritOfBrooklandsCard theSpiritOfBrooklandsCard, string title)
+        { }
 
         private static void showModal()
         {

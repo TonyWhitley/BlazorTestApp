@@ -4,7 +4,7 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Behind The Wheel</h1> <h4>09/09/2022</h4>
+<h1>Behind The Wheel</h1> <h4>10/09/2022</h4>
 
 Enter the password:
 <input type="text" @bind=@Password />
@@ -75,7 +75,9 @@ Enter the password:
     <Dialog Caption="Tech Time"
         Answers="@message"
         OnClose="@OnDialogClose"
-        Type="Dialog.Category.OneTwoThree">
+        Type="Dialog.Category.OneToSix"
+        ButtonsRequired=buttonsRequired
+    >
     </Dialog>
 }
 @if (ConfirmDialogIsOpen)
@@ -228,6 +230,7 @@ Enter the password:
     private static List<string> message;
     private static string dialogTitle;
     public static int response;
+    public static int buttonsRequired;
 
     public static void OpenDialog(List<string> answers)
     {

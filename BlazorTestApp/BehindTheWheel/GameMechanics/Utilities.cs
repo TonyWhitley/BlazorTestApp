@@ -16,6 +16,21 @@ namespace BehindTheWheel.GameMechanics
         {
             return rnd.Next(min, max);
         }
+        public static List<int> GetRandomOrder(int min, int max)
+        {
+            List<int> order = new List<int>();
+            for (var i = min; i < max; i++)
+            {
+                var item = rnd.Next(min, max);
+                while (order.Contains(item))
+                {
+                    item = rnd.Next(min, max);
+                }
+                order.Add(item);
+            }
+            return order;
+        }
+
         static bool UseDebugFilePaths = System.Diagnostics.Debugger.IsAttached;
         public static String getDefaultLocation(String name, Boolean isFile = true)
         {

@@ -58,6 +58,44 @@
                             3
                         </button>
                         break;
+                    case Category.OneToSix:
+                        <button type="button" class="btn btn-danger"
+                        @onclick=@One>
+                            1
+                        </button>
+                        <button type="button" class="btn btn-warning"
+                        @onclick="@Two">
+                            2
+                        </button>
+                        @if (ButtonsRequired > 2)
+                        {
+                            <button type="button" class="btn btn-primary"
+                            @onclick="@Three">
+                                3
+                            </button>
+                        }
+                        @if (ButtonsRequired > 3)
+                        {
+                            <button type="button" class="btn btn-success"
+                            @onclick=@Four>
+                                4
+                            </button>
+                        }
+                        @if (ButtonsRequired > 4)
+                        {
+                            <button type="button" class="btn btn-secondary"
+                            @onclick=@Five>
+                                5
+                            </button>
+                        }
+                        @if (ButtonsRequired > 5)
+                        {
+                            <button type="button" class="btn btn-dark"
+                            @onclick=@Six>
+                                6
+                            </button>
+                        }
+                        break;
                 }
             </div>
         </div>
@@ -68,6 +106,8 @@
     [Parameter] public List<string> Answers { get; set; }
     [Parameter] public EventCallback<int> OnClose { get; set; }
     [Parameter] public Category Type { get; set; }
+    [Parameter] public int ButtonsRequired { get; set; }
+    
     private Task Cancel()
     {
         return OnClose.InvokeAsync(0);
@@ -88,11 +128,24 @@
     {
         return OnClose.InvokeAsync(3);
     }
+    private Task Four()
+    {
+        return OnClose.InvokeAsync(4);
+    }
+    private Task Five()
+    {
+        return OnClose.InvokeAsync(5);
+    }
+    private Task Six()
+    {
+        return OnClose.InvokeAsync(6);
+    }
     public enum Category
     {
         Okay,
         SaveNot,
         DeleteNot,
-        OneTwoThree
+        OneTwoThree,
+        OneToSix,
     }
 }
