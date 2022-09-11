@@ -23,6 +23,7 @@ namespace BehindTheWheel.GameMechanics
     {
         internal static int index = -1; // (Indexed before using)
         internal static int lastSquare = 0;
+        internal static int TechTimeSquare = 0;   // a Tech Time square (for dev mode)
         internal static int gotoBrooklandsSquare = 0;   // the square that branches off to the inner loop
         internal static int brooklandsSquare = 0;   // the square that branches off to the inner loop
         internal static int brooklandsRejoinSquare = 0;
@@ -101,6 +102,7 @@ namespace BehindTheWheel.GameMechanics
     {
         public TechTimeSquare(string text, int points = 0, int cash = 0, int nextSquare = 0) : base(text, points, cash)
         {
+            Index.TechTimeSquare = Index.index;
         }
         /// <summary>
         /// Any special action on landing

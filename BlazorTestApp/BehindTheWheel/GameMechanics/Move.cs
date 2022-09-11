@@ -30,12 +30,7 @@ namespace BehindTheWheel.GameMechanics
                 var currentSquare = Squares.NextSquare(Player.players[player].CurrentSquare, dice);
                 PlayerModel.playerModel.DisplayThrow(player, dice, currentSquare);
                 // Display the new square
-                PlayerModel.playerModel.Update(player,
-                    Player.players[player].Points,
-                    Player.players[player].Cash,
-                    Squares.board[currentSquare]);
-
-                Tuple<int, int> tuple = Squares.board[currentSquare].OnLandingAction(currentSquare);
+                Tuple<int, int> tuple = DisplaySquare(currentSquare);
 
                 // Display status after any actions
                 Player.players[player].CurrentSquare = tuple.Item1;
@@ -43,6 +38,23 @@ namespace BehindTheWheel.GameMechanics
                 player = (player + 1) % 2;
             }
         }
+
+        private static Tuple<int, int> DisplaySquare(int currentSquare)
+        {
+            if (System.Diagnostics.Debugger.IsAttached ||
+                BlazorIndexPage.Password == "TVR. Blackpool's finest")
+            {
+                PlayerModel.playerModel.Update(player,
+                Player.players[player].Points,
+                Player.players[player].Cash,
+                Squares.board[currentSquare]);
+
+                Tuple<int, int> tuple = Squares.board[currentSquare].OnLandingAction(currentSquare);
+                return tuple;
+            }
+            return null;
+        }
+
         public void Score(int points)
         {
             Player.players[player].Cash += Squares.board[Player.players[player].CurrentSquare].Cash;
@@ -51,6 +63,16 @@ namespace BehindTheWheel.GameMechanics
                 Player.players[player].Points,
                 Player.players[player].Cash,
                 Squares.board[Player.players[player].CurrentSquare]);
+        }
+        internal void TechTime()
+        {
+            Player.players[player].CurrentSquare = Index.TechTimeSquare;
+            DisplaySquare(Player.players[player].CurrentSquare);
+        }
+        internal void Brooklands()
+        {
+            Player.players[player].CurrentSquare = Index.brooklandsFirstSquare;
+            DisplaySquare(Player.players[player].CurrentSquare);
         }
     }
 }

@@ -4,7 +4,7 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Behind The Wheel</h1> <h4>10/09/2022</h4>
+<h1>Behind The Wheel</h1> <h4>11/09/2022</h4>
 
 Enter the password:
 <input type="text" @bind=@Password />
@@ -53,13 +53,27 @@ Enter the password:
                 <textarea readonly="readonly" align="left" border="1" style="height:300px">@commentary
                 </textarea>
             </tr>
-            <tr>
-                Enter the dice throw:
-                <input type="number" @bind=diceNumber @onkeyup="@diceThrow" />
-                @*onkeyup AFTER number has been entered*@
-            </tr>
         </table>
     </td>
+</table>
+<table>
+<tr>
+        <Syncfusion.Blazor.Buttons.SfCheckBox Name="DevMode" D Label="Dev mode" Checked="@devMode" Bind="@devMode" @onchange="DevModeChange"></Syncfusion.Blazor.Buttons.SfCheckBox>
+    
+        @if (devMode)
+            {
+            <td>
+                Enter the dice throw:<br>
+            <input type="number" @bind=diceNumber @onkeyup="@diceThrow" />
+                @*onkeyup AFTER number has been entered*@
+            </td>
+            <td>
+                <button class="btn btn-danger" @onclick="TechTime">Tech Time</button>
+                <button class="btn btn-warning" @onclick="Brooklands">Go to Brooklands</button>
+
+            </td>
+            }
+</tr>
 
 </table>
 
@@ -133,6 +147,11 @@ Enter the password:
 
 @code
 {
+    private static Boolean devMode = System.Diagnostics.Debugger.IsAttached;
+    private static void DevModeChange()
+    {
+        devMode = !devMode;
+    }
     private static string[] CardStyle = { 
         "background-color: #cfc ; height:300px",
         "background-color: #cfc ; height:300px"};
@@ -213,6 +232,15 @@ Enter the password:
     private void ThrowDice()
     {
         mv.throwDice();
+    }
+
+    private void TechTime()
+    {
+        mv.TechTime();
+    }
+    private void Brooklands()
+    {
+        mv.Brooklands();
     }
     protected override async Task OnInitializedAsync()
     {
