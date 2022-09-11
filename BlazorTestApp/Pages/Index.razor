@@ -1,6 +1,5 @@
 ﻿@page "/"
 @using BehindTheWheel.GameMechanics
-@inject HttpClient Http
 
 <PageTitle>Index</PageTitle>
 
@@ -203,9 +202,6 @@ Enter the password:
     }
     protected override async Task OnInitializedAsync()
     {
-        //TheSpiritOfBrooklandsCards.theSpiritOfBrooklandsCards = await Http.GetFromJsonAsync<List<TheSpiritOfBrooklandsCard>>("resources/theSpiritOfBrooklandsCards.json");
-        //ToolTimeCards.toolTimeCards = await Http.GetFromJsonAsync<List<ToolTimeCard>>("resources/ToolTimeCards.json");
-        //TechTimeCards.techTimeCards = await Http.GetFromJsonAsync<List<TechTimeCard>>("resources/TechTimeCards.json");
         TheSpiritOfBrooklandsCards.Load();
         ToolTimeCards.Load();
         TechTimeCards.Load();

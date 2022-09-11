@@ -41,6 +41,7 @@ namespace BehindTheWheel.GameMechanics
 
         private static Tuple<int, int> DisplaySquare(int currentSquare)
         {
+            Tuple<int, int> tuple = new Tuple<int, int>(currentSquare, 0);
             if (System.Diagnostics.Debugger.IsAttached ||
                 BlazorIndexPage.Password == "TVR. Blackpool's finest")
             {
@@ -49,10 +50,10 @@ namespace BehindTheWheel.GameMechanics
                 Player.players[player].Cash,
                 Squares.board[currentSquare]);
 
-                Tuple<int, int> tuple = Squares.board[currentSquare].OnLandingAction(currentSquare);
+                tuple = Squares.board[currentSquare].OnLandingAction(currentSquare);
                 return tuple;
             }
-            return null;
+            return tuple;
         }
 
         public void Score(int points)

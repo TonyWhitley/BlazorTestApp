@@ -48,10 +48,13 @@ namespace BehindTheWheel.ViewModel
             */
         }
 
-        public static void DisplayToolTime(ToolTimeCard toolTimeCard)
+        public static void DisplayToolTime(ToolTimeCard? toolTimeCard)
         {
-            string points = toolTimeCard.Points > 1 ? " Points deducted" : " Point deducted";
-            Index.ConfirmOpenDialog("TOOL TIME", new List<string>() { toolTimeCard.Text_Question, toolTimeCard.Points + points });
+            if (toolTimeCard != null && toolTimeCard.Text_Question != null)
+            {
+                string points = toolTimeCard.Points > 1 ? " Points deducted" : " Point deducted";
+                Index.ConfirmOpenDialog("TOOL TIME", new List<string>() { toolTimeCard.Text_Question, toolTimeCard.Points + points });
+            }
 
             /*MessageBox.Show($"{toolTimeCard.Text}\n\n{toolTimeCard.Points} " + points,
                  "Maintenance To Be Done",
@@ -63,49 +66,56 @@ namespace BehindTheWheel.ViewModel
         public static async Task DisplayTechTimeAsync(TechTimeCard techTimeCard)
         {
             //string text = "TECH TIME\n\n" + techTimeCard.Text_Question;
-            List<string> answers = new List<string>() { techTimeCard.Text_Question };
-            int answerCount = techTimeCard.Answers.Where(x => !x.text.Equals("")).Count();
-            var columnOrder = Utilities.GetRandomOrder(0, answerCount);
-            int ansNumber = 1;
-            // Put the answers in random order
-            for (int i = 0; i < answerCount; i++)
+            if (techTimeCard.Text_Question != null && techTimeCard.Answers != null)
             {
-                string answerText = techTimeCard.Answers[columnOrder[i]].text;
-                answers.Add($"{ansNumber}. {answerText}");
-                //text += $"\n {ansNumber}. {answerText}";
-                ansNumber++;
+                List<string> answers = new List<string>() { techTimeCard.Text_Question };
+                int answerCount = techTimeCard.Answers.Where(x => !x.text.Equals("")).Count();
+                var columnOrder = Utilities.GetRandomOrder(0, answerCount);
+                int ansNumber = 1;
+                // Put the answers in random order
+                for (int i = 0; i < answerCount; i++)
+                {
+                    string answerText = techTimeCard.Answers[columnOrder[i]].text;
+                    answers.Add($"{ansNumber}. {answerText}");
+                    //text += $"\n {ansNumber}. {answerText}";
+                    ansNumber++;
+                }
+                Index.buttonsRequired = answerCount;
+                Index.OpenDialog(answers);
+                //Index.commentary2 = text + "\n\n";
+                /*MessageBox.Show(text,
+                     $"{techTimeCard.Index}.",
+                    MessageBoxButtons.OK
+                    );
+                */
+                while (Index.response == -1)
+                {
+                    await Task.Delay(100);
+                }
+                var answer = answers[Index.response].Substring(3);
+                if (techTimeCard.CheckAnswer(answer))
+                {
+                    TechTimeResult = 3; // points
+                    Index.ConfirmOpenDialog("Right answer!", new List<string>() { "3 points" });
+                }
+                else
+                {
+                    TechTimeResult = 0; // points
+                    Index.ConfirmOpenDialog("Wrong answer", new List<string>() { "Correct answer was", techTimeCard.Answers[0].Item1, "not " + answer });
+                }
+                Index.mv.Score(TechTimeResult);
+                if (Index.Instance != null)
+                    Index.Instance.refreshTheScreen();
             }
-            Index.buttonsRequired = answerCount;
-            Index.OpenDialog(answers);
-            //Index.commentary2 = text + "\n\n";
-            /*MessageBox.Show(text,
-                 $"{techTimeCard.Index}.",
-                MessageBoxButtons.OK
-                );
-            */
-            while (Index.response == -1)
-            {
-                await Task.Delay(100);
-            }
-            var answer = answers[Index.response].Substring(3);
-            if (techTimeCard.CheckAnswer(answer))
-            {
-                TechTimeResult = 3; // points
-                Index.ConfirmOpenDialog("Right answer!",new List<string>() { "3 points"});
-            }
-            else
-            {
-                TechTimeResult = 0; // points
-                Index.ConfirmOpenDialog("Wrong answer",new List<string>() { "Correct answer was", techTimeCard.Answers[0].Item1, "not " + answer });
-            }
-            Index.mv.Score(TechTimeResult);
-            Index.Instance.refreshTheScreen();
         }
 
         public static void DisplaytheSpiritOfBrooklands(TheSpiritOfBrooklandsCard theSpiritOfBrooklandsCard, string title)
         {
-            string points = theSpiritOfBrooklandsCard.Points > 1 ? " Points" : " Point";
-            Index.ConfirmOpenDialog(title, new List<string>() { theSpiritOfBrooklandsCard.Text_Question, theSpiritOfBrooklandsCard.Points +  points });
+            if (theSpiritOfBrooklandsCard.Text_Question != null)
+            {
+                string points = theSpiritOfBrooklandsCard.Points > 1 ? " Points" : " Point";
+                Index.ConfirmOpenDialog(title, new List<string>() { theSpiritOfBrooklandsCard.Text_Question, theSpiritOfBrooklandsCard.Points + points });
+            }
             /*MessageBox.Show($"{theSpiritOfBrooklandsCard.Text}\n\n{theSpiritOfBrooklandsCard.Points} " + points,
                  $"{theSpiritOfBrooklandsCard.Index.ToString()}: {title}",
                 MessageBoxButtons.OK
@@ -115,9 +125,5 @@ namespace BehindTheWheel.ViewModel
         public static void DisplaytheSpiritOfBrooklandsQuestion(TheSpiritOfBrooklandsCard theSpiritOfBrooklandsCard, string title)
         { }
 
-        private static void showModal()
-        {
-            
-        }
     }
 }

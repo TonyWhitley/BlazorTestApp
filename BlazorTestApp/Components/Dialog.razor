@@ -10,9 +10,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                @foreach (var item in Answers)
+                @if (Answers != null)
                 {
-                    <p>@item</p> 
+                    foreach (var item in Answers)
+                    {
+                        <p>@item</p>
+                    }
                 }
             </div>
             <div class="modal-footer">

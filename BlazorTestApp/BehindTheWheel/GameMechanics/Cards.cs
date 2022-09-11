@@ -13,37 +13,42 @@ namespace BehindTheWheel.GameMechanics
     public class Card
     {
         public int Index { get; internal set; }
-        public string Text_Question { get; private set; }
+        public string? Text_Question { get; private set; }
         public int Points { get; private set; }
-        public List<(string text, bool correct)> Answers { get; private set; }
-        public Card(int index, string text, int points, List<(string, bool)> answers)
+        public List<(string text, bool correct)>? Answers { get; private set; }
+        public Card(int index, string? text, int points, List<(string, bool)>? answers)
         {
             Index = index;
-            Text_Question = text;
+            if (text != null)
+                Text_Question = text;
             Points = points;
-            Answers = answers;
+            if (answers != null)
+                Answers = answers;
         }
     }
     public class ToolTimeCard : Card
     {
-        public ToolTimeCard(int index, string text=null, int points=0, List<(string, bool)> answers = null) : base(index, text, points, answers)
+        public ToolTimeCard(int index, string? text=null, int points=0, List<(string, bool)>? answers = null) : base(index, text, points, answers)
         {
             // "Maintenance To Be Done";
         }
     }
     public class TechTimeCard : Card
     {
-        public TechTimeCard(int index, string question, int points, List<(string, bool)> answers = null) : base(index, question, points, answers)
+        public TechTimeCard(int index, string question, int points, List<(string, bool)>? answers = null) : base(index, question, points, answers)
         {
         }
         public bool CheckAnswer(string answer)
         {
             bool result = false;
-            foreach (var ans in this.Answers)
+            if (Answers != null)
             {
-                if (ans.text == answer)
+                foreach (var (text, correct) in Answers)
                 {
-                    result = ans.correct;
+                    if (text == answer)
+                    {
+                        result = correct;
+                    }
                 }
             }
             return result;
@@ -51,7 +56,7 @@ namespace BehindTheWheel.GameMechanics
     }
     public class TheSpiritOfBrooklandsCard : Card
     {
-        public TheSpiritOfBrooklandsCard(int index, string text, int points, List<(string, bool)> answers=null) : base(index, text, points, answers)
+        public TheSpiritOfBrooklandsCard(int index, string text, int points, List<(string, bool)>? answers=null) : base(index, text, points, answers)
         {
         }
     }
@@ -125,7 +130,7 @@ Bore out cylinders;5".Split('\n');
                             int.Parse(columns[1])));
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -228,7 +233,7 @@ What component did the alternator replace?;The dynamo;Distributor points;Horn re
                             answers));
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -289,7 +294,7 @@ What component did the alternator replace?;The dynamo;Distributor points;Horn re
                             int.Parse(columns[2])));
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
