@@ -103,47 +103,6 @@ Enter the password:
     </Dialog>
 }
 
-<Window x:Class = "XAMLGrid.Window1" 
-   xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-   xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml" 
-   Title = "Window1" Height = "300" Width = "604">
-    
-   <linkhref ="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
-   
-   <Grid x:Name = "FormLayoutGrid" Background = "LightGray"> 
-      <Grid.ColumnDefinitions> 
-         <ColumnDefinition Width = "Auto" /> 
-         <ColumnDefinition /> 
-      </Grid.ColumnDefinitions> 
-		
-      <Grid.RowDefinitions> 
-         <RowDefinition Height = "*" /> 
-         <RowDefinition Height = "*" /> 
-         <RowDefinition Height = "*" /> 
-      </Grid.RowDefinitions> 
-		
-      <TextBlock Grid.Row = "0" Grid.Column = "0" Text = "Name" 
-         Margin = "10" HorizontalAlignment = "Left" VerticalAlignment = "Center" 
-         Width = "100"/> 
-      
-      <TextBox Grid.Row = "0" Grid.Column = "1" Margin = "10"/> 
-      <TextBlock Grid.Row = "1" Grid.Column = "0" Text = "ID" Margin = "10" 
-         HorizontalAlignment = "Left" VerticalAlignment = "Center" Width = "100"/> 
-      
-      <TextBox Grid.Row = "1" Grid.Column = "1" Margin = "10"/> 
-      <TextBlock Grid.Row = "2" Grid.Column = "0" Text = "Age" Margin = "10" 
-         HorizontalAlignment = "Left" VerticalAlignment = "Center" Width = "100"/> 
-      
-      <TextBox Grid.Row = "2" Grid.Column = "1" Margin = "10"/>
-   </Grid> 
-	
-</Window>	
-
-@*@inject IModalService modal
-
-<h5>Click this button Show Modal Popup</h5>
-<button @onclick="@(()=>modal.Show<Counter>("Modal Popup Example"))" class="btn btn-primary">View</button>
-*@
 
 @code
 {
@@ -180,11 +139,11 @@ Enter the password:
         }
 
     }
-    public static string Password { get; set; }
+    public static string? Password { get; set; }
     public int DiceThrow { get; set; }
 
     public static BehindTheWheel.GameMechanics.Move mv = new BehindTheWheel.GameMechanics.Move();
-    public static BlazorTestApp.Pages.Index Instance;
+    public static BlazorTestApp.Pages.Index? Instance;
 
     public Index()
     {
@@ -206,7 +165,7 @@ Enter the password:
     }
     public static Player[] players = { new Player(name : "Ray", text : "START", points : "Points: 10", "Cash: 0" ),
     new Player(name : "Tony", text : "START", points : "Points: 10", "Cash: 0" )};
-    public static string commentary = null;
+    public static string? commentary = null;
 
 
 
@@ -254,9 +213,8 @@ Enter the password:
 
     public static Boolean DialogIsOpen { get; set; }
     public static Boolean ConfirmDialogIsOpen { get; set; }
-    private string publisherName = "FRED";
-    private static List<string> message;
-    private static string dialogTitle;
+    private static List<string>? message;
+    private static string? dialogTitle;
     public static int response;
     public static int buttonsRequired;
 

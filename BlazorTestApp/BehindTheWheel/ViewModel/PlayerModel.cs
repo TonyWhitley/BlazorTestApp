@@ -1,11 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
-
-using BehindTheWheel.GameMechanics;
-
-using BlazorTestApp.Pages;
-
-using static System.Net.Mime.MediaTypeNames;
+﻿using BehindTheWheel.GameMechanics;
 
 using Index = BlazorTestApp.Pages.Index;
 
@@ -16,10 +9,10 @@ namespace BehindTheWheel.ViewModel
     /// </summary>
     internal class PlayerModel
     {
-        public object Name { get; private set; }
-        public object Points { get; private set; }
-        public object Cash { get; private set; }
-        public object CurrentSquare { get; private set; }
+        public object? Name { get; private set; }
+        public object? Points { get; private set; }
+        public object? Cash { get; private set; }
+        public object? CurrentSquare { get; private set; }
         public static PlayerModel playerModel = new BehindTheWheel.ViewModel.PlayerModel();
 
         public void Update(int player, int points, int cash, Square currentSquare)
@@ -71,13 +64,13 @@ namespace BehindTheWheel.ViewModel
         {
             //string text = "TECH TIME\n\n" + techTimeCard.Text_Question;
             List<string> answers = new List<string>() { techTimeCard.Text_Question };
-            int answerCount = techTimeCard.Answers.Where(x => !x.Equals("")).Count();
+            int answerCount = techTimeCard.Answers.Where(x => !x.text.Equals("")).Count();
             var columnOrder = Utilities.GetRandomOrder(0, answerCount);
             int ansNumber = 1;
             // Put the answers in random order
             for (int i = 0; i < answerCount; i++)
             {
-                string answerText = techTimeCard.Answers[columnOrder[i]];
+                string answerText = techTimeCard.Answers[columnOrder[i]].text;
                 answers.Add($"{ansNumber}. {answerText}");
                 //text += $"\n {ansNumber}. {answerText}";
                 ansNumber++;
@@ -95,7 +88,7 @@ namespace BehindTheWheel.ViewModel
                 await Task.Delay(100);
             }
             var answer = answers[Index.response].Substring(3);
-            if (techTimeCard.Answers[0] == answer)
+            if (techTimeCard.CheckAnswer(answer))
             {
                 TechTimeResult = 3; // points
                 Index.ConfirmOpenDialog("Right answer!",new List<string>() { "3 points"});
@@ -103,7 +96,7 @@ namespace BehindTheWheel.ViewModel
             else
             {
                 TechTimeResult = 0; // points
-                Index.ConfirmOpenDialog("Wrong answer",new List<string>() { "Correct answer was", techTimeCard.Answers[0], "not " + answer });
+                Index.ConfirmOpenDialog("Wrong answer",new List<string>() { "Correct answer was", techTimeCard.Answers[0].Item1, "not " + answer });
             }
             Index.mv.Score(TechTimeResult);
             Index.Instance.refreshTheScreen();
