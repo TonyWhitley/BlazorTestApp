@@ -60,14 +60,13 @@ namespace BehindTheWheel.GameMechanics
         private static bool passwordCheck()
         {
             if (BlazorIndexPage.Password != null &&
-                    BlazorIndexPage.Password.Trim() == "TVR. Blackpool's finest")
+                    BlazorIndexPage.Password.Trim() == "TVR_BlackpoolsFinest")
             {
-                BlazorIndexPage.commentary += $"\nPassword '{BlazorIndexPage.Password}' accepted";
                 return true;
             }
             if (!System.Diagnostics.Debugger.IsAttached)
             {
-                BlazorIndexPage.commentary += $"\nPassword '{BlazorIndexPage.Password}' not accepted";
+                BlazorIndexPage.commentary += $"Password '{BlazorIndexPage.Password}' not accepted\n";
                 return false;
             }
             return true;
