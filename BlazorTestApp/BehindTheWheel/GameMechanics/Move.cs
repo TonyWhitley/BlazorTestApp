@@ -37,6 +37,10 @@ namespace BehindTheWheel.GameMechanics
                 Score(tuple.Item2);
                 player = (player + 1) % 2;
             }
+            else
+            {
+                BlazorIndexPage.commentary += $"Password '\n{BlazorIndexPage.Password}' not accepted";
+            }
         }
 
         private static Tuple<int, int> DisplaySquare(int currentSquare)
