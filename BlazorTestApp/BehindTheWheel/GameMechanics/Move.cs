@@ -24,8 +24,7 @@ namespace BehindTheWheel.GameMechanics
         }
         internal void fixedThrow(int dice)
         {
-            if (System.Diagnostics.Debugger.IsAttached ||
-                BlazorIndexPage.Password == "TVR. Blackpool's finest")
+            if (passwordCheck())
             {
                 var currentSquare = Squares.NextSquare(Player.players[player].CurrentSquare, dice);
                 PlayerModel.playerModel.DisplayThrow(player, dice, currentSquare);
@@ -39,15 +38,13 @@ namespace BehindTheWheel.GameMechanics
             }
             else
             {
-                BlazorIndexPage.commentary += $"Password '\n{BlazorIndexPage.Password}' not accepted";
             }
         }
 
         private static Tuple<int, int> DisplaySquare(int currentSquare)
         {
             Tuple<int, int> tuple = new Tuple<int, int>(currentSquare, 0);
-            if (System.Diagnostics.Debugger.IsAttached ||
-                BlazorIndexPage.Password == "TVR. Blackpool's finest")
+            if (passwordCheck())
             {
                 PlayerModel.playerModel.Update(player,
                 Player.players[player].Points,
@@ -60,6 +57,21 @@ namespace BehindTheWheel.GameMechanics
             return tuple;
         }
 
+        private static bool passwordCheck()
+        {
+            if (BlazorIndexPage.Password != null &&
+                    BlazorIndexPage.Password.Trim() == "TVR. Blackpool's finest")
+            {
+                BlazorIndexPage.commentary += $"\nPassword '{BlazorIndexPage.Password}' accepted";
+                return true;
+            }
+            if (!System.Diagnostics.Debugger.IsAttached)
+            {
+                BlazorIndexPage.commentary += $"\nPassword '{BlazorIndexPage.Password}' not accepted";
+                return false;
+            }
+            return true;
+        }
         public void Score(int points)
         {
             Player.players[player].Cash += Squares.board[Player.players[player].CurrentSquare].Cash;
